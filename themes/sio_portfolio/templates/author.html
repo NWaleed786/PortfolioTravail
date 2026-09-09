@@ -1,0 +1,28 @@
+<!-- authors.html -->
+{% extends "base.html" %}
+{% block title %}Auteurs{% endblock %}
+
+{% block content %}
+<div class="titre-page">
+    <h1>Aute<span>urs</span></h1>
+    <hr class="ligne-titre">
+</div>
+
+{% if authors %}
+<div class="liste-fiches">
+    {% for author, articles in authors %}
+    <div class="fiche-item">
+        <div class="fiche-main">
+            <a href="{{ SITEURL }}/{{ author.url }}" class="fiche-titre">{{ author.name }}</a>
+        </div>
+        <span class="badge">{{ articles|length }} article(s)</span>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="etat-vide">
+    <i class="bi bi-people"></i>
+    <p>Aucun auteur répertorié.</p>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Mots-clés{% endblock %}
+
+{% block content %}
+
+<div class="titre-page">
+    <h1>Mots-<span>clés</span></h1>
+    <p>Technologies, langages et outils abordés dans les publications.</p>
+    <hr class="ligne-titre">
+</div>
+
+{% if tags %}
+<div class="parcours-card p-4" style="max-width: 900px; margin: 0 auto;">
+    <div class="technologies justify-content-center">
+        {% for tag, articles in tags %}
+        <a href="{{ SITEURL }}/{{ tag.url }}" class="tech text-decoration-none">
+            <i class="bi bi-tag-fill me-1"></i> {{ tag.name }}
+            <span class="badge ms-1" style="font-size:0.75rem;">{{ articles|length }}</span>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class="etat-vide">
+    <i class="bi bi-tags"></i>
+    <p>Aucun mot-clé disponible actuellement.</p>
+</div>
+{% endif %}
+
+{% endblock %}

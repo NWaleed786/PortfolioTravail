@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil — Portfolio BTS SIO{% endblock %}
+
+{% block content %}
+
+<!-- EN-TÊTE D'ACCUEIL -->
+<section class="titre-page mb-5">
+    <div class="mb-4 d-inline-block position-relative">
+        <img
+            src="{{ SITEURL }}/images/Waleed.jpeg"
+            alt="Portrait de Nasrulla Waleed"
+            style="width: 140px; height: 140px; object-fit: cover; object-position: center 20%; border-radius: 50%; border: 3px solid var(--blue); box-shadow: 0 0 25px var(--blue-glow);"
+        >
+    </div>
+
+    <h1>Nasrulla <span>Waleed</span></h1>
+    <p class="lead fw-semibold text-light mb-2">Étudiant en BTS SIO — Option SLAM (Solutions Logicielles et Applications Métiers)</p>
+    <p>Bienvenue sur mon portfolio professionnel. Retrouvez ci-dessous les différents chapitres retraçant mon parcours, mes réalisations logicielles et ma veille technologique.</p>
+    <hr class="ligne-titre">
+</section>
+
+<!-- GRILLE DES CHAPITRES (RECTANGLES STYLISÉS) -->
+<section class="mb-5">
+    <div class="row g-4">
+        {% for nom, url, icone, sousNav, description, couleur in MAINITEMS %}
+        <div class="col-md-6 col-lg-4">
+            <div class="parcours-card h-100 d-flex flex-column justify-content-between">
+                <div>
+
+                    <h2><i class="bi bi-{{ icone }}"></i> {{ nom }}</h2>
+                    <p class="mt-2 mb-4">{{ description }}</p>
+                </div>
+
+                <div>
+                    <a href="{{ SITEURL }}{{ url }}" class="btn btn-outline-primary w-100">
+                        Accéder au chapitre <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- RECTANGLE : PROFIL & DOCUMENTS -->
+<section class="mt-5">
+    <div class="parcours-card text-center p-4" style="max-width: 800px; margin: 0 auto;">
+        <span class="annee mb-2"><i class="bi bi-person-lines-fill me-1"></i> Profil Professionnel</span>
+        <h2 class="mb-3">CV &amp; Réalisations</h2>
+        <p class="mb-4">Consultez mon CV au format PDF ainsi que mes dépôts de code source sur GitHub.</p>
+
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+            <a
+                href="{{ GITHUB_URL }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+            >
+                <i class="fa-brands fa-github fs-5 me-1"></i>
+                Mon GitHub
+            </a>
+
+            <a
+                href="{{ SITEURL }}/downloads/CV_Nasrulla_Waleed.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+            >
+                <i class="fa-solid fa-file-pdf fs-5 me-1"></i>
+                Télécharger mon CV
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

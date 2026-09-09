@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Veille Technologique{% endblock %}
+
+{% block content %}
+
+<div class="titre-page">
+    <h1>Veille <span>Technologique</span></h1>
+    <p>Suivi de l'actualité informatique, des vulnérabilités, des frameworks émergents et des évolutions logicielles.</p>
+    <hr class="ligne-titre">
+</div>
+
+{% if page and page.content %}
+<div class="parcours-card mb-5 mx-auto" style="max-width: 900px;">
+    <div class="article-content">
+        {{ page.content }}
+    </div>
+</div>
+{% endif %}
+
+{% if articles %}
+<div class="liste-fiches">
+    {% for article in articles %}
+    <div class="fiche-item">
+        <div class="fiche-main">
+            <a href="{{ SITEURL }}/{{ article.url }}" class="fiche-titre">
+                <i class="bi bi-broadcast text-primary me-2"></i>{{ article.title }}
+            </a>
+            <div class="fiche-meta mt-1">
+                <i class="bi bi-calendar3 me-1"></i> Publié le {{ article.date.strftime('%d/%m/%Y') }}
+                {% if article.summary %}&nbsp;—&nbsp; {{ article.summary|striptags|truncate(120) }}{% endif %}
+            </div>
+        </div>
+
+        {% if article.tags %}
+        <div class="d-flex gap-1 flex-wrap">
+            {% for tag in article.tags %}
+            <span class="badge">{{ tag.name }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="a-venir">
+    <i class="bi bi-inboxes"></i>
+    <h2>Aucun article de veille pour le moment</h2>
+    <p>Les fiches de synthèse et analyses technologiques seront publiées prochainement.</p>
+    <span class="annee">Publications à venir</span>
+</div>
+{% endif %}
+
+{% endblock %}

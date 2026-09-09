@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Archives des Articles{% endblock %}
+
+{% block content %}
+
+<div class="titre-page">
+    <h1><span>Archives</span></h1>
+    <p>Ensemble des articles publiés, classés chronologiquement.</p>
+    <hr class="ligne-titre">
+</div>
+
+{% if articles %}
+<div class="liste-fiches">
+    {% for article in articles %}
+    <div class="fiche-item">
+        <div class="fiche-main">
+            <a href="{{ SITEURL }}/{{ article.url }}" class="fiche-titre">{{ article.title }}</a>
+            <div class="fiche-meta mt-1">
+                <i class="bi bi-calendar3 me-1"></i> {{ article.date.strftime('%d/%m/%Y') }}
+                {% if article.category %}
+                &nbsp;—&nbsp; <span class="text-info">{{ article.category }}</span>
+                {% endif %}
+            </div>
+        </div>
+        <a href="{{ SITEURL }}/{{ article.url }}" class="btn btn-outline-primary btn-sm">Consulter</a>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="etat-vide">
+    <i class="bi bi-archive"></i>
+    <p>Aucun article dans les archives.</p>
+</div>
+{% endif %}
+
+{% endblock %}

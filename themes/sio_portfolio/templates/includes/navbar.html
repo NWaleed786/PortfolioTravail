@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-md">
+    <div class="container px-3 px-lg-0">
+        <!-- Bouton hamburger mobile -->
+        <button class="navbar-toggler border-0 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation">
+            <i class="bi bi-list fs-2 text-info"></i>
+        </button>
+
+        <!-- Navigation -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav w-100 justify-content-start gap-1 py-2 py-md-0 fw-semibold">
+                {% for nom, url, icone, sousNav, description, couleur in MENUITEMS %}
+                    
+                    {# Détection si un des sous-liens est actif #}
+                    {% set ns = namespace(sous_nav_actif=false) %}
+                    {% if sousNav %}
+                        {% for nom_sous, url_sous in sousNav %}
+                            {% if output_file == url_sous or '/' + output_file == url_sous %}
+                                {% set ns.sous_nav_actif = true %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                    <li class="nav-item {% if sousNav %} dropdown {% endif %}">
+                        <a 
+                            class="nav-link d-flex align-items-center gap-2 {% if output_file == url or '/' + output_file == url or ns.sous_nav_actif %} active {% endif %}"
+                            title="{{ description }}"
+                            href="{{ SITEURL }}{{ url }}"
+                            {% if sousNav %} data-bs-toggle="dropdown" aria-expanded="false" {% endif %}
+                        >
+                            <i class="bi bi-{{ icone }} nav-link-icon"></i>
+                            <span>{{ nom }}</span>
+                        </a>
+
+                        {% if sousNav %}
+                            <ul class="dropdown-menu">
+                                {% for nom_sous, url_sous in sousNav %}
+                                    <li>
+                                        <a class="dropdown-item {% if output_file == url_sous or '/' + output_file == url_sous %} active {% endif %}" href="{{ SITEURL }}{{ url_sous }}">
+                                            {{ nom_sous }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>

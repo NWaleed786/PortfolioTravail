@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Catégories{% endblock %}
+
+{% block content %}
+
+<div class="titre-page">
+    <h1><span>Catégories</span></h1>
+    <p>Articles et travaux regroupés par domaine d'expertise.</p>
+    <hr class="ligne-titre">
+</div>
+
+{% if categories %}
+<div class="row g-4" style="max-width: 900px; margin: 0 auto;">
+    {% for category, articles in categories %}
+    <div class="col-md-6">
+        <div class="parcours-card d-flex justify-content-between align-items-center">
+            <div>
+                <h2><i class="bi bi-folder-fill me-2"></i> {{ category.name }}</h2>
+                <a href="{{ SITEURL }}/{{ category.url }}" class="btn btn-outline-primary btn-sm mt-2">
+                    Consulter <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <span class="badge fs-6">{{ articles|length }}</span>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="etat-vide">
+    <i class="bi bi-inboxes"></i>
+    <p>Aucune catégorie renseignée pour le moment.</p>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} — Portfolio BTS SIO{% endblock %}
+
+{% block content %}
+<div class="mx-auto" style="max-width: 950px;">
+    
+    <div class="titre-page">
+        <h1><span>{{ page.title }}</span></h1>
+        <hr class="ligne-titre">
+    </div>
+
+    {% if page.content %}
+        <div class="parcours-card p-4 p-md-5">
+            <div class="article-content">
+                {{ page.content }}
+            </div>
+        </div>
+    {% else %}
+        <div class="a-venir">
+            <i class="bi bi-clock-history"></i>
+            <h2>Section en cours d'enrichissement</h2>
+            <p>
+                Le contenu de ce chapitre sera intégré progressivement au fil de mon cursus en <strong>BTS SIO</strong>, 
+                de la finalisation de mes projets applicatifs et du déroulement de mes stages.
+            </p>
+            <span class="annee"><i class="bi bi-arrow-repeat me-1"></i> Mises à jour à venir au cours du semestre</span>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}

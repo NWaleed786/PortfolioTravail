@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Portfolio BTS SIO — Nasrulla Waleed{% endblock %}</title>
+    
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ SITEURL }}/theme/logo/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ SITEURL }}/theme/logo/favicon-32x32.png">
+    <link rel="shortcut icon" href="{{ SITEURL }}/theme/logo/favicon.ico">
+
+    <!-- Framework CSS & Icônes --> 
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/vendor/fontawesome/css/all.min.css">
+
+    <!-- Feuille de style personnalisée -->   
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/custom.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    {% include 'includes/header.html' %}
+
+    <main class="flex-shrink-0 flex-grow-1 container my-5">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+    <script src="{{ SITEURL }}/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ SITEURL }}/theme/js/custom.js"></script>
+</body>
+</html>

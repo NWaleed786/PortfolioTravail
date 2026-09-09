@@ -1,0 +1,40 @@
+{#
+_______________________________________________________________________________
+
+                            HEADER DU PORTFOLIO
+_______________________________________________________________________________
+#}
+
+<header class="header-wrapper w-100">
+    <!-- BANDEAU SUPERIEUR -->
+    <div class="container-fluid py-3 background-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Logo -->
+                <div class="col-md-4 text-center text-md-start mb-2 mb-md-0">
+                    <a href="{{ SITEURL }}/" title="Page d'accueil" class="navbar-brand d-inline-block">
+                        <img src="{{ SITEURL }}/theme/logo/logo_PBS-teal.png" alt="logo du portfolio" style="max-height: 75px; width: auto; filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.2));">
+                    </a>
+                </div>
+
+                <!-- Titres -->
+                <div class="col-md-8 text-center text-md-start">
+                    <!-- Titre principal -->
+                    <h1 class="m-0 p-0 text-white fw-bold h3">{{ SITENAME }}</h1>
+
+                    <!-- Titre secondaire (en vert) -->
+                    {% if SITESUBTITLE %}
+                    <p class="m-0 p-0 text-success fw-semibold mt-1" style="font-size: 1rem;">
+                        <i>{{ SITESUBTITLE }}</i>
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <div class="container-fluid m-0 p-0 sticky-top bg-dark shadow-lg nav-container">
+        {% include 'includes/navbar.html' %}
+    </div>
+</header>

@@ -1,0 +1,2078 @@
+/*
+============================================================
+        PORTFOLIO BTS SIO — PREMIUM DARK THEME
+        BLEU NUIT • BLEU • GRIS • BLANC
+============================================================
+*/
+
+
+/* ==========================================================
+   VARIABLES
+========================================================== */
+
+:root {
+
+    --bg: #0b1220;
+    --bg-dark: #070d18;
+    --bg-black: #040810;
+
+    --blue-dark: #1455a0;
+    --blue-deep: #0f2b48;
+
+    --surface: #131d2c;
+    --surface-light: #1c2b3e;
+    --surface-hover: #25374f;
+
+    --white: #ffffff;
+    --white-soft: #f0f6fc;
+    --white-muted: #cbd5e1;
+
+    --text: #e2e8f0;
+    --text-soft: #a0aec0;
+    --text-muted: #64748b;
+
+    --blue: #38bdf8;
+    --blue-hover: #60a5fa;
+    --blue-soft: #93c5fd;
+
+    --blue-glow: rgba(56, 189, 248, 0.25);
+
+    --border: #1e293b;
+    --border-light: #334155;
+    --border-blue: #38bdf8;
+
+    --nav-link: #cbd5e1;
+    --nav-link-active: #ffffff;
+
+    --timeline-line: rgba(56, 189, 248, 0.35);
+
+    --bs-primary: #38bdf8;
+    --bs-primary-rgb: 56, 189, 248;
+
+    --bs-warning: #38bdf8;
+    --bs-warning-rgb: 56, 189, 248;
+
+    --bs-body-bg: #0b1220;
+    --bs-body-color: #e2e8f0;
+}
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(56, 189, 248, 0.12),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(20, 85, 160, 0.15),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #0b1220 0%,
+            #0f172a 50%,
+            #080e18 100%
+        );
+
+    background-attachment: fixed;
+
+    color: var(--text);
+
+    font-family:
+        'Fira Sans',
+        'Open Sans',
+        system-ui,
+        -apple-system,
+        sans-serif;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* ==========================================================
+   SÉLECTION
+========================================================== */
+
+::selection {
+
+    background: var(--blue);
+
+    color: #0b1220;
+}
+
+
+/* ==========================================================
+   TYPOGRAPHIE
+========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    margin-top: 0;
+
+    color: var(--white-soft);
+
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.02em;
+}
+
+
+h1 {
+
+    font-weight: 800;
+
+    letter-spacing: -0.03em;
+
+    text-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.40);
+}
+
+
+h2 {
+    font-weight: 750;
+}
+
+
+h3,
+h4,
+h5 {
+    font-weight: 700;
+}
+
+
+p {
+
+    color: var(--text-soft);
+
+    line-height: 1.75;
+
+    font-size: 1.02rem;
+}
+
+
+strong {
+
+    color: var(--white);
+
+    font-weight: 700;
+}
+
+
+small {
+
+    color: var(--text-muted);
+}
+
+
+.text-muted {
+
+    color: var(--text-muted) !important;
+}
+
+
+/* ==========================================================
+   LIENS
+========================================================== */
+
+a {
+
+    color: var(--blue-soft);
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+a:hover {
+    color: var(--white);
+}
+
+
+a:visited {
+    color: var(--blue-soft);
+}
+
+
+a:focus-visible {
+
+    outline:
+        2px solid var(--blue);
+
+    outline-offset: 4px;
+
+    border-radius: 4px;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.background-header {
+
+    position: relative;
+
+    background-image:
+
+        linear-gradient(
+            135deg,
+            rgba(7, 13, 24, 0.95),
+            rgba(15, 43, 72, 0.88)
+        ),
+
+        url('../backgrounds/header_background.png');
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    border-bottom:
+        1px solid var(--border-light);
+
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.45);
+
+    overflow: hidden;
+}
+
+
+.background-header::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    right: -100px;
+    top: -150px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(56, 189, 248, 0.20),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+.background-header h1 {
+
+    color: var(--white);
+
+    font-weight: 800;
+}
+
+
+.background-header p {
+
+    color: var(--blue-soft);
+}
+
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+.navbar {
+
+    min-height: 70px;
+
+    padding: 10px 0;
+
+    background:
+        rgba(11, 18, 32, 0.92) !important;
+
+    border-bottom:
+        1px solid var(--border);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35);
+
+    font-size: 0.95rem;
+
+    backdrop-filter: blur(16px);
+
+    z-index: 1000;
+}
+
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.navbar-brand {
+
+    color: var(--white) !important;
+
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+}
+
+
+.navbar-brand:hover {
+
+    color: var(--blue) !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+
+.nav-link {
+
+    position: relative;
+
+    margin: 0 4px;
+
+    padding: 10px 16px !important;
+
+    border-radius: 8px;
+
+    color: var(--nav-link) !important;
+
+    font-weight: 500;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.nav-link::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 4px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--blue);
+
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+
+    transition: width 0.25s ease;
+}
+
+
+.nav-link:hover {
+
+    color: var(--white) !important;
+
+    background:
+        rgba(56, 189, 248, 0.08);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.nav-link:hover::before {
+
+    width: 24px;
+}
+
+
+/* Page actuelle */
+
+.navbar-nav
+.nav-item
+.active {
+
+    color: var(--white) !important;
+
+    background:
+        rgba(56, 189, 248, 0.15);
+
+    font-weight: 600;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(56, 189, 248, 0.25);
+}
+
+
+.navbar-nav
+.nav-item
+.active::before {
+
+    width: 24px;
+}
+
+
+/* ==========================================================
+   ICONES NAVIGATION
+========================================================== */
+
+.nav-link-icon {
+
+    margin-right: 8px;
+
+    font-size: 1.1em;
+
+    color: var(--blue-soft);
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.nav-link:hover
+.nav-link-icon {
+
+    color: var(--white);
+
+    transform:
+        translateY(-2px)
+        scale(1.1);
+}
+
+
+/* ==========================================================
+   DROPDOWN
+========================================================== */
+
+.dropdown-menu {
+
+    margin-top: 10px !important;
+
+    min-width: 230px;
+
+    padding: 8px;
+
+    background: #131d2c !important;
+
+    border:
+        1px solid var(--border-light) !important;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.60);
+
+    backdrop-filter: blur(16px);
+
+    overflow: hidden;
+
+    animation:
+        dropdownAppear 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+@keyframes dropdownAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-8px) scale(0.98);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+    }
+}
+
+
+.dropdown-item {
+
+    padding:
+        11px 15px;
+
+    color:
+        var(--white-soft) !important;
+
+    background:
+        transparent !important;
+
+    border-radius:
+        8px;
+
+    font-weight:
+        500;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+
+.dropdown-item:hover {
+
+    color:
+        var(--white) !important;
+
+    background:
+        rgba(56, 189, 248, 0.12) !important;
+
+    padding-left:
+        19px;
+}
+
+
+.dropdown-item.active,
+.dropdown-item:active {
+
+    color:
+        #ffffff !important;
+
+    background:
+        var(--blue) !important;
+
+    font-weight:
+        600;
+}
+
+
+/* ==========================================================
+   CONTENU PRINCIPAL
+========================================================== */
+
+main {
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* ==========================================================
+   TITRE DE PAGE
+========================================================== */
+
+.titre-page {
+
+    text-align: center;
+
+    padding:
+        35px 15px 15px;
+}
+
+
+.titre-page h1 {
+
+    font-size:
+        clamp(2.1rem, 5vw, 3rem);
+
+    margin-bottom:
+        18px;
+}
+
+
+.titre-page h1 span {
+
+    color:
+        var(--blue);
+
+    text-shadow: 0 0 25px var(--blue-glow);
+}
+
+
+.titre-page p {
+
+    max-width:
+        800px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--text-soft);
+
+    line-height:
+        1.8;
+}
+
+
+/* Ligne sous le titre */
+
+.ligne-titre {
+
+    width:
+        100px;
+
+    height:
+        4px;
+
+    margin:
+        25px auto 50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--blue),
+            transparent
+        );
+
+    border:
+        0;
+
+    border-radius:
+        50%;
+
+    opacity:
+        1;
+}
+
+
+/* ==========================================================
+   TIMELINE — PARCOURS SCOLAIRE
+========================================================== */
+
+.timeline {
+
+    position:
+        relative;
+
+    max-width:
+        1050px;
+
+    margin:
+        0 auto;
+
+    padding:
+        10px 0 30px;
+}
+
+
+/* Ligne bleue centrale */
+
+.timeline::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        0;
+
+    bottom:
+        0;
+
+    width:
+        3px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            var(--blue),
+            var(--blue-dark),
+            transparent
+        );
+
+    transform:
+        translateX(-50%);
+
+    box-shadow:
+        0 0 15px rgba(56, 189, 248, 0.30);
+}
+
+
+/* ==========================================================
+   ÉLÉMENTS TIMELINE
+========================================================== */
+
+.timeline-item {
+
+    position:
+        relative;
+
+    width:
+        50%;
+
+    padding:
+        20px 45px;
+}
+
+
+.timeline-item:nth-child(odd) {
+
+    left:
+        0;
+
+    text-align:
+        right;
+}
+
+
+.timeline-item:nth-child(even) {
+
+    left:
+        50%;
+
+    text-align:
+        left;
+}
+
+
+/* ==========================================================
+   POINTS DE LA TIMELINE
+========================================================== */
+
+.timeline-dot {
+
+    position:
+        absolute;
+
+    top:
+        42px;
+
+    width:
+        20px;
+
+    height:
+        20px;
+
+    background:
+        var(--blue);
+
+    border:
+        4px solid #0b1220;
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        0 0 0 3px var(--blue),
+        0 0 25px rgba(56, 189, 248, 0.60);
+
+    z-index:
+        5;
+}
+
+
+.timeline-item:nth-child(odd)
+.timeline-dot {
+
+    right:
+        -10px;
+}
+
+
+.timeline-item:nth-child(even)
+.timeline-dot {
+
+    left:
+        -10px;
+}
+
+
+/* ==========================================================
+   CARTES PARCOURS
+========================================================== */
+
+.parcours-card {
+
+    position:
+        relative;
+
+    padding:
+        32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #152234,
+            #101a28
+        );
+
+    border:
+        1px solid var(--border-light);
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter:
+        blur(12px);
+
+    overflow:
+        hidden;
+
+    transition:
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Ligne bleue en haut */
+
+.parcours-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        0;
+
+    width:
+        100%;
+
+    height:
+        3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--blue),
+            transparent
+        );
+
+    opacity:
+        0.6;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+
+/* Halo */
+
+.parcours-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        200px;
+
+    height:
+        200px;
+
+    top:
+        -100px;
+
+    right:
+        -100px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(56, 189, 248, 0.15),
+            transparent 70%
+        );
+
+    pointer-events:
+        none;
+}
+
+
+.parcours-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--blue);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(56, 189, 248, 0.15);
+}
+
+
+.parcours-card:hover::before {
+
+    opacity:
+        1;
+}
+
+
+/* ==========================================================
+   ANNÉES
+========================================================== */
+
+.annee {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        15px;
+
+    padding:
+        6px 15px;
+
+    color:
+        var(--blue-soft);
+
+    background:
+        rgba(56, 189, 248, 0.10);
+
+    border:
+        1px solid rgba(56, 189, 248, 0.30);
+
+    border-radius:
+        30px;
+
+    font-size:
+        0.85rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.03em;
+}
+
+
+/* ==========================================================
+   TITRES DES CARTES
+========================================================== */
+
+.parcours-card h2 {
+
+    margin-bottom:
+        10px;
+
+    color:
+        var(--white);
+
+    font-size:
+        1.4rem;
+
+    font-weight:
+        750;
+}
+
+
+.parcours-card h2 i {
+
+    color:
+        var(--blue);
+
+    margin-right:
+        8px;
+}
+
+
+.parcours-card h3 {
+
+    margin-bottom:
+        16px;
+
+    color:
+        var(--blue-soft);
+
+    font-size:
+        1rem;
+
+    font-weight:
+        600;
+}
+
+
+/* ==========================================================
+   TEXTE DES CARTES
+========================================================== */
+
+.parcours-card p {
+
+    color:
+        var(--text-soft);
+
+    line-height:
+        1.75;
+}
+
+
+.parcours-card strong {
+
+    color:
+        var(--white);
+}
+
+
+/* ==========================================================
+   LISTE DES COMPÉTENCES
+========================================================== */
+
+.competences {
+
+    list-style:
+        none;
+
+    padding:
+        0;
+
+    margin:
+        20px 0;
+}
+
+
+.competences li {
+
+    margin-bottom:
+        10px;
+
+    padding:
+        11px 15px;
+
+    color:
+        var(--text);
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius:
+        10px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.competences li:hover {
+
+    background:
+        rgba(56, 189, 248, 0.10);
+
+    border-color:
+        rgba(56, 189, 248, 0.25);
+
+    transform:
+        translateX(5px);
+}
+
+
+.competences li i {
+
+    margin-right:
+        10px;
+
+    color:
+        var(--blue);
+
+}
+
+
+/* ==========================================================
+   TECHNOLOGIES
+========================================================== */
+
+.technologies {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
+
+    margin-top:
+        20px;
+}
+
+
+.tech {
+
+    display:
+        inline-block;
+
+    padding:
+        7px 15px;
+
+    color:
+        var(--blue-soft);
+
+    background:
+        rgba(56, 189, 248, 0.08);
+
+    border:
+        1px solid rgba(56, 189, 248, 0.25);
+
+    border-radius:
+        30px;
+
+    font-size:
+        0.88rem;
+
+    font-weight:
+        600;
+
+    transition:
+        all 0.25s ease;
+}
+
+
+.tech:hover {
+
+    color:
+        #0b1220;
+
+    background:
+        var(--blue);
+
+    border-color:
+        var(--blue);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 6px 20px rgba(56, 189, 248, 0.35);
+}
+
+
+/* ==========================================================
+   SÉPARATEURS BLANCS
+========================================================== */
+
+.separateur {
+
+    height:
+        1px;
+
+    margin:
+        50px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.20),
+            transparent
+        );
+
+    border:
+        0;
+
+    opacity:
+        1;
+}
+
+
+/* ==========================================================
+   CARTES BOOTSTRAP
+========================================================== */
+
+.card {
+
+    position:
+        relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #152234,
+            #101a28
+        );
+
+    color:
+        var(--text);
+
+    border:
+        1px solid var(--border-light);
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.30);
+
+    overflow:
+        hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--blue);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+
+.card-title {
+
+    color:
+        var(--white) !important;
+}
+
+
+.card-text {
+
+    color:
+        var(--text-soft) !important;
+}
+
+
+/* ==========================================================
+   BOUTONS
+========================================================== */
+
+.btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    min-height:
+        44px;
+
+    padding:
+        10px 22px;
+
+    border-radius:
+        8px;
+
+    font-size:
+        0.95rem;
+
+    font-weight:
+        600;
+
+    transition:
+        all 0.25s ease;
+}
+
+
+.btn-primary {
+
+    background:
+        linear-gradient(
+            135deg,
+            #38bdf8,
+            #0284c7
+        ) !important;
+
+    border:
+        none !important;
+
+    color:
+        #0b1220 !important;
+
+    font-weight:
+        700 !important;
+
+    box-shadow:
+        0 4px 15px rgba(56, 189, 248, 0.30);
+}
+
+
+.btn-primary:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #60a5fa,
+            #38bdf8
+        ) !important;
+
+    color:
+        #0b1220 !important;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(56, 189, 248, 0.45);
+}
+
+
+.btn-secondary {
+
+    background:
+        var(--surface-light) !important;
+
+    border:
+        1px solid var(--border-light) !important;
+
+    color:
+        var(--white) !important;
+}
+
+
+.btn-secondary:hover {
+
+    background:
+        var(--surface-hover) !important;
+
+    border-color:
+        var(--blue) !important;
+
+    color:
+        var(--white) !important;
+
+    transform:
+        translateY(-2px);
+}
+
+
+.btn-outline-primary {
+
+    background:
+        rgba(56, 189, 248, 0.05) !important;
+
+    border:
+        1px solid rgba(56, 189, 248, 0.60) !important;
+
+    color:
+        var(--blue-soft) !important;
+}
+
+
+.btn-outline-primary:hover {
+
+    background:
+        var(--blue) !important;
+
+    border-color:
+        var(--blue) !important;
+
+    color:
+        #0b1220 !important;
+
+    font-weight:
+        700;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ==========================================================
+   FORMULAIRES
+========================================================== */
+
+.form-label {
+
+    color:
+        var(--white-soft);
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        8px;
+}
+
+
+.form-control,
+.form-select {
+
+    min-height:
+        44px;
+
+    background:
+        #0f172a !important;
+
+    color:
+        var(--white) !important;
+
+    border:
+        1px solid var(--border-light);
+
+    border-radius:
+        8px;
+
+    padding:
+        10px 14px;
+}
+
+
+.form-control::placeholder {
+
+    color:
+        var(--text-muted) !important;
+}
+
+
+.form-control:focus,
+.form-select:focus {
+
+    background:
+        #131d2c !important;
+
+    color:
+        var(--white) !important;
+
+    border-color:
+        var(--blue);
+
+    box-shadow:
+        0 0 0 3px rgba(56, 189, 248, 0.20);
+}
+
+
+/* ==========================================================
+   TABLEAUX
+========================================================== */
+
+.table {
+
+    color:
+        var(--text) !important;
+
+    border-color:
+        var(--border);
+}
+
+
+.table th {
+
+    color:
+        var(--white) !important;
+
+    background:
+        var(--surface-light);
+
+    border-color:
+        var(--border-light);
+
+    padding:
+        14px 16px;
+}
+
+
+.table td {
+
+    color:
+        var(--text-soft) !important;
+
+    border-color:
+        var(--border);
+
+    padding:
+        14px 16px;
+
+    vertical-align:
+        middle;
+}
+
+
+/* ==========================================================
+   BADGES
+========================================================== */
+
+.badge {
+
+    padding:
+        6px 12px;
+
+    color:
+        #0b1220 !important;
+
+    background:
+        var(--blue) !important;
+
+    border-radius:
+        6px;
+
+    font-weight:
+        700;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer {
+
+    padding:
+        30px 0;
+
+    background:
+        #070d18 !important;
+
+    color:
+        var(--text-muted);
+
+    border-top:
+        1px solid var(--border);
+}
+
+
+footer small {
+
+    color:
+        var(--text-muted);
+}
+
+
+footer a,
+footer a:visited {
+
+    color:
+        var(--text-soft) !important;
+}
+
+
+footer a:hover {
+
+    color:
+        var(--blue) !important;
+}
+
+
+/* ==========================================================
+   MENU MOBILE
+========================================================== */
+
+.navbar-toggler {
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border-light);
+
+    border-radius:
+        8px;
+
+    padding:
+        8px 12px;
+}
+
+
+.navbar-toggler:hover {
+
+    background:
+        var(--surface-hover);
+
+    border-color:
+        var(--blue);
+}
+
+
+.navbar-toggler:focus {
+
+    box-shadow:
+        0 0 0 3px rgba(56, 189, 248, 0.20);
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar {
+
+    width:
+        10px;
+
+    height:
+        10px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        #070d18;
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        #334155;
+
+    border-radius:
+        5px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        var(--blue);
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLETTE
+========================================================== */
+
+@media (max-width: 991px) {
+
+    .nav-link {
+
+        padding:
+            9px 12px !important;
+    }
+
+    .navbar {
+
+        font-size:
+            0.9rem;
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
+
+@media (max-width: 767px) {
+
+    .background-header h1 {
+
+        font-size:
+            1.5rem;
+    }
+
+
+    .navbar {
+
+        padding:
+            10px;
+    }
+
+
+    .nav-link {
+
+        margin:
+            3px 0;
+
+        padding:
+            11px 14px !important;
+    }
+
+
+    .titre-page {
+
+        padding:
+            20px 15px 5px;
+    }
+
+
+    .titre-page h1 {
+
+        font-size:
+            2rem;
+    }
+
+
+    .ligne-titre {
+
+        margin-bottom:
+            35px;
+    }
+
+
+    /* Timeline mobile */
+
+    .timeline {
+
+        padding-left:
+            0;
+    }
+
+
+    .timeline::before {
+
+        left:
+            18px;
+
+        width:
+            3px;
+    }
+
+
+    .timeline-item {
+
+        width:
+            100%;
+
+        left:
+            0 !important;
+
+        padding:
+            15px 10px 15px 55px;
+
+        text-align:
+            left !important;
+    }
+
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+
+        left:
+            8px;
+
+        right:
+            auto;
+
+        top:
+            35px;
+    }
+
+
+    .parcours-card {
+
+        padding:
+            24px;
+
+        border-radius:
+            14px;
+    }
+
+
+    .technologies {
+
+        gap:
+            8px;
+    }
+
+
+    .tech {
+
+        padding:
+            6px 12px;
+
+        font-size:
+            0.82rem;
+    }
+
+
+    .separateur {
+
+        margin:
+            35px 0;
+    }
+
+}
+
+
+/* ==========================================================
+   TRÈS PETITS ÉCRANS
+========================================================== */
+
+@media (max-width: 420px) {
+
+    .titre-page h1 {
+
+        font-size:
+            1.75rem;
+    }
+
+
+    .parcours-card {
+
+        padding:
+            20px;
+    }
+
+
+    .parcours-card h2 {
+
+        font-size:
+            1.2rem;
+    }
+
+
+    .parcours-card h3 {
+
+        font-size:
+            0.92rem;
+    }
+
+
+    .annee {
+
+        font-size:
+            0.78rem;
+
+        padding:
+            5px 12px;
+    }
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITÉ
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+
+}
+
+
+/* ==========================================================
+   LISTES DE FICHES (Archives, Auteurs, Catégories, Tags, Veille)
+========================================================== */
+
+.liste-fiches {
+
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.fiche-item {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    padding: 20px 26px;
+    background: linear-gradient(145deg, #152234, #101a28);
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fiche-item:hover {
+
+    transform: translateX(6px);
+    border-color: var(--blue);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.38);
+}
+
+.fiche-main {
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.fiche-item a.fiche-titre {
+
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.fiche-item a.fiche-titre:hover {
+
+    color: var(--blue-hover);
+}
+
+.fiche-meta {
+
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+.fiche-item .badge {
+
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================
+   ÉTAT VIDE (aucun contenu pour le moment)
+========================================================== */
+
+.etat-vide {
+
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 40px 20px;
+    border: 1px dashed var(--border-light);
+    border-radius: 16px;
+}
+
+.etat-vide i {
+
+    font-size: 2.2rem;
+    color: var(--blue);
+    display: block;
+    margin-bottom: 12px;
+}
+
+
+/* ==========================================================
+   BLOC "À VENIR" (sections en préparation)
+========================================================== */
+
+.a-venir {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    max-width: 680px;
+    margin: 35px auto 10px;
+    padding: 50px 35px;
+    background: linear-gradient(145deg, #152234, #101a28);
+    border: 1px dashed var(--border-light);
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.30);
+}
+
+.a-venir i {
+
+    font-size: 2.8rem;
+    color: var(--blue);
+}
+
+.a-venir h2 {
+
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--white);
+}
+
+.a-venir p {
+
+    color: var(--text-soft);
+    margin: 0;
+    line-height: 1.7;
+}
+body {
+    margin: 0 !important;
+    padding-top: 0 !important;
+}
+
+.background-header {
+    background: linear-gradient(135deg, rgba(7, 13, 24, 0.95), rgba(15, 43, 72, 0.88));
+    border-bottom: 1px solid var(--border-light);
+    display: block;
+    width: 100%;
+}
+
+/* Navigation toujours visible sur toutes les pages */
+.header-wrapper {
+    padding-top: 70px;
+}
+
+.nav-container {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1100;
+}
